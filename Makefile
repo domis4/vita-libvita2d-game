@@ -1,9 +1,10 @@
 TITLE_ID = VITA2DTST
-TARGET   = vita2dsample
-SOURCES  = $(wildcard app/src/*.cpp)
-ASSETS 	 = $(wildcard app/assets/*.*)
-OBJS     = $(SOURCES:**/.*=*.o) $(ASSETS:**/.*=*.o)  
-OBJS 	 = $(patsubst %.cpp, %.o, $(SOURCES)) $(patsubst %.cpp, %.o, $(ASSETS))
+TARGET = vita2dsample
+SOURCEDIR = app/src
+ASSETSDIR = app/assets
+SOURCES = $(wildcard $(SOURCEDIR)/*.cpp)
+ASSETS = $(wildcard $(ASSETSDIR)/*.*)
+OBJS = $(patsubst %.cpp, %.o, $(SOURCES))
 
 LIBS = -lvita2d -lSceDisplay_stub -lSceGxm_stub \
 	-lSceSysmodule_stub -lSceCtrl_stub -lScePgf_stub -lScePvf_stub \
