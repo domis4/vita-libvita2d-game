@@ -11,11 +11,6 @@
 
 #include <vita2d.h>
 
-/*
- * Symbol of the image.png file
- */
-extern unsigned char _binary_image_png_start;
-
 int main()
 {
 	SceCtrlData pad;
@@ -30,10 +25,7 @@ int main()
 	pgf = vita2d_load_default_pgf();
 	pvf = vita2d_load_default_pvf();
 
-	/*
-	 * Load the statically compiled image.png file.
-	 */
-	image = vita2d_load_PNG_buffer(&_binary_image_png_start);
+	image = vita2d_load_PNG_file("app0:assets/image.png");
 
 	memset(&pad, 0, sizeof(pad));
 
