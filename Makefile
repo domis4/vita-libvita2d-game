@@ -2,8 +2,8 @@ TITLE_ID = VITA2DTST
 TARGET = vita2dsample
 SOURCEDIR = app/src
 ASSETSDIR = app/assets
-SOURCES = $(wildcard $(SOURCEDIR)/*.cpp)
-ASSETS = $(wildcard $(ASSETSDIR)/*.*)
+SOURCES = $(shell find $(SOURCEDIR)/ -type f -name '*.cpp')
+ASSETS =  $(shell find $(SOURCEDIR)/ -type f -name '*.*')
 OBJS = $(patsubst %.cpp, %.o, $(SOURCES))
 
 LIBS = -lvita2d -lSceDisplay_stub -lSceGxm_stub \
@@ -20,7 +20,7 @@ all: $(TARGET).vpk
 
 %.vpk: eboot.bin
 	vita-mksfoex -s TITLE_ID=$(TITLE_ID) "$(TARGET)" param.sfo
-	vita-pack-vpk -s param.sfo -b eboot.bin $@
+	vita-pack-vpk -s param.sfo -b eboot.bin $@ $(ASSETS)
 
 eboot.bin: $(TARGET).velf
 	vita-make-fself -s $< $@
