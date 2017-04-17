@@ -6,7 +6,6 @@ void GameModule::init() {
     vita2d_set_clear_color(RGBA8(255, 255, 255, 255));
 	pgf = vita2d_load_default_pgf();
     image = vita2d_load_PNG_file("app0:assets/image.png");
-    TitlescreenModule titlescreen;
     titlescreen.init();
 }
 
