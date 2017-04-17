@@ -1,8 +1,7 @@
 /param.sfo
-/app/src/main.o
 /eboot.bin
-/vita2dsample.elf
-/vita2dsample.velf
-/vita2dsample.vpk
+/**/*.elf
+/**/*.velf
+/**/*.vpk
 /.vscode/settings.json
 /**/*.o
