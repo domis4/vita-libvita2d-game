@@ -1,7 +1,7 @@
-TITLE_ID = VITA2DTST
-TARGET = vita2dsample
+TITLE_ID = CPPGVITA2D
+TARGET = cppgamevita2d
 SOURCEDIR = app/src
-ASSETSDIR = app/assets
+ASSETSDIR = assets
 SOURCES = $(shell find $(SOURCEDIR)/ -type f -name '*.cpp')
 ASSETS =  $(shell find $(SOURCEDIR)/ -type f -name '*.*')
 OBJS = $(patsubst %.cpp, %.o, $(SOURCES))
@@ -12,7 +12,7 @@ LIBS = -lvita2d -lSceDisplay_stub -lSceGxm_stub \
 
 PREFIX  = arm-vita-eabi
 CXX 	= $(PREFIX)-g++
-CXXFLAGS= -Wl,-q -Wall -fno-lto -std=c++11
+CXXFLAGS= -Wl,-q -g -Wall -fno-lto -std=c++11
 ASFLAGS = $(CXXFLAGS)
 PSVITAIP = "192.168.178.22"
 
@@ -44,4 +44,8 @@ vpksend: $(TARGET).vpk
 
 send: eboot.bin
 	curl -T eboot.bin ftp://$(PSVITAIP):1337/ux0:/app/$(TITLE_ID)/
+	@echo "Sent."
+
+sendAssets: eboot.bin
+	find $(ASSETSDIR) -type f -name '*.png' -exec curl --ftp-create-dirs -T {} ftp://$(PSVITAIP):1337/ux0:/app/$(TITLE_ID)/{} \;
 	@echo "Sent."
