@@ -4,13 +4,7 @@ int main()
 {
 	GameModule game;
 	game.init();
-
-	while (1) {
-		game.render();
-		game.update();
-	}
-
+	game.initRender();
 	game.end();
-
 	return 0;
 }
