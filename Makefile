@@ -1,5 +1,5 @@
-TITLE_ID = CPPGVITA2D
-TARGET = cppgamevita2d
+TITLE_ID = DOMIS4CPP
+TARGET = domis4cpp
 SOURCEDIR = app/src
 ASSETSDIR = assets
 SOURCES = $(shell find $(SOURCEDIR)/ -type f -name '*.cpp')
@@ -12,7 +12,7 @@ LIBS = -lvita2d -lSceDisplay_stub -lSceGxm_stub \
 
 PREFIX  = arm-vita-eabi
 CXX 	= $(PREFIX)-g++
-CXXFLAGS= -Wl,-q -g -Wall -fno-lto -std=c++11
+CXXFLAGS= -Wl,-q -Wall -fno-lto -std=c++11
 ASFLAGS = $(CXXFLAGS)
 PSVITAIP = "192.168.178.22"
 

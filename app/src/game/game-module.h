@@ -16,6 +16,7 @@ class GameModule {
         vita2d_texture *image;
         TitlescreenModule titlescreen;
         float rad;
+        
     public:
         void init();
         void update();

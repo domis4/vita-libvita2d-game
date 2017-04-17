@@ -1,7 +1,6 @@
 #include "game/game-module.h"
 
-int main()
-{
+int main() {
 	GameModule game;
 	game.init();
 	game.initRender();
