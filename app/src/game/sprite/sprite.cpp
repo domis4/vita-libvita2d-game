@@ -11,8 +11,8 @@ void Sprite::init(std::vector<std::string> textures_paths) {
     }
 }
 
-void Sprite::render() {
+void Sprite::render(float x, float y) {
     for (auto texture : textures) {  
-        vita2d_draw_texture(texture, 0, 0);
+        vita2d_draw_texture(texture, x, y);
     }
 }

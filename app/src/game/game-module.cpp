@@ -11,6 +11,7 @@ void GameModule::init() {
 
 void GameModule::update() {
     rad += 0.1f;
+    titlescreen.update();
 }
 
 void GameModule::initRender() {
@@ -25,8 +26,8 @@ void GameModule::render() {
 
     titlescreen.render();
 
-    vita2d_pgf_draw_text(pgf, 16, 16, RGBA8(0, 0, 0, 255), 1.0f, "fps" );
-    vita2d_draw_texture_rotate(image, 940/2, 544/2, rad);
+    //vita2d_pgf_draw_text(pgf, 16, 16, RGBA8(0, 0, 0, 255), 1.0f, "fps" );
+    //vita2d_draw_texture_rotate(image, 940/2, 544/2, rad);
 
     vita2d_end_drawing();
     vita2d_swap_buffers();

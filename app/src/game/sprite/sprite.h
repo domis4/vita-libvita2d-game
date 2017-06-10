@@ -12,5 +12,6 @@ class Sprite {
     public:
         void init(std::vector<std::string> textures);
         void loadTexture(std::string texture_path);
-        void render();
+        void getFps();
+        void render(float x, float y);
 };
