@@ -18,6 +18,7 @@ void GameModule::initRender() {
     while(1) {
         render();
         update();
+        fpsLimiter.limitFps();
     }
 }
 void GameModule::render() {
@@ -30,10 +31,9 @@ void GameModule::render() {
         vita2d_pgf_draw_text(pgf, 16, 16, RGBA8(0, 0, 0, 255), 1.0f, "Game started!" );
     }
 
-
-    //vita2d_pgf_draw_text(pgf, 16, 16, RGBA8(0, 0, 0, 255), 1.0f, "fps" );
     //vita2d_draw_texture_rotate(image, 940/2, 544/2, rad);
-
+    showFps();
+    showDelta();
     vita2d_end_drawing();
     vita2d_swap_buffers();
 }
@@ -45,4 +45,18 @@ void GameModule::end() {
 	vita2d_free_pvf(pvf);
 
 	sceKernelExitProcess(0);
+}
+
+void GameModule::showFps() {
+    char str[128]={0};
+    sprintf(str, "FPS: %d", fpsLimiter.getFps());
+    vita2d_pgf_draw_text(pgf, 16, 16, RGBA8(0, 0, 0, 255), 1.05f, str);
+    vita2d_pgf_draw_text(pgf, 16, 16, RGBA8(255, 255, 255, 255), 1.0f, str);
+}
+
+void GameModule::showDelta() {
+    char str[128]={0};
+    sprintf(str, "Delta: %f", fpsLimiter.getDelta());
+    vita2d_pgf_draw_text(pgf, 16, 48, RGBA8(0, 0, 0, 255), 1.05f, str);
+    vita2d_pgf_draw_text(pgf, 16, 48, RGBA8(255, 255, 255, 255), 1.0f, str);
 }
