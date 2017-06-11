@@ -20,7 +20,7 @@ void FpsLimiter::limitFps() {
     }
 
     if (limitFPS == true) {
-        sceKernelDelayThread((lastLoopTime - now + OPTIMAL_TIME) + 10000); //microseconds = 1000000
+        sceKernelDelayThread((lastLoopTime - now + OPTIMAL_TIME)); //microseconds = 1000000
     }
 }
 
