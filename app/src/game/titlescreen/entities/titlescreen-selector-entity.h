@@ -17,10 +17,10 @@ class TitlescreenSelectorEntity {
         SceCtrlData pad;
         bool button_is_pressed = false;
         int positions [4][2] = {
-            {557, -22},
-            {557, 38},
-            {557, 96},
-            {557, 153}
+            {0, 0},
+            {0, 51},
+            {0, 98},
+            {0, 150}
         };
         int index = 0;
     public:
