@@ -6,4 +6,5 @@ class Atlas {
     public:
         void init();
         bool isInMainMenu();
+        void leaveMainMenu();
 };

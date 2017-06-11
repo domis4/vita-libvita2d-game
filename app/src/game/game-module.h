@@ -20,7 +20,6 @@ class GameModule {
         vita2d_texture *image;
         TitlescreenModule titlescreen;
         float rad;
-        bool isTitlescreen = true;
     public:
         void init();
         void update();

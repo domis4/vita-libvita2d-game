@@ -7,6 +7,7 @@
 #include <psp2/ctrl.h>
 
 #include "../../entity/entity.h"
+#include "../../atlas/atlas.h"
 
 class TitlescreenSelectorEntity {
     private:

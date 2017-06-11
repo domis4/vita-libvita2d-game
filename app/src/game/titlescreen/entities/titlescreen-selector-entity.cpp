@@ -21,7 +21,13 @@ void TitlescreenSelectorEntity::render() {
 }
 
 void TitlescreenSelectorEntity::navigateMenu() {
+    extern Atlas atlas;
     button_is_pressed = button_is_pressed && pad.buttons;
+
+    if (pad.buttons & SCE_CTRL_CROSS) {
+        atlas.leaveMainMenu();
+    }
+
     if (pad.buttons & SCE_CTRL_DOWN && !button_is_pressed) {
         if (index < 3) {
             index++;
