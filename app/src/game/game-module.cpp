@@ -23,8 +23,13 @@ void GameModule::initRender() {
 void GameModule::render() {
     vita2d_start_drawing();
     vita2d_clear_screen();
+    if (isTitlescreen) {
+        titlescreen.render();
+    } else {
+        delete &titlescreen;
+        vita2d_pgf_draw_text(pgf, 16, 16, RGBA8(0, 0, 0, 255), 1.0f, "Game started!" );
+    }
 
-    titlescreen.render();
 
     //vita2d_pgf_draw_text(pgf, 16, 16, RGBA8(0, 0, 0, 255), 1.0f, "fps" );
     //vita2d_draw_texture_rotate(image, 940/2, 544/2, rad);

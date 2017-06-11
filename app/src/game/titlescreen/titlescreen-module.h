@@ -3,6 +3,7 @@
 #include <vector>
 #include "../sprite/sprite.h"
 #include "entities/titlescreen-entity.h"
+#include "entities/titlescreen-selector-entity.h"
 
 class TitlescreenModule {
     private:
@@ -11,8 +12,8 @@ class TitlescreenModule {
         TitlescreenEntity right0Entity;
         TitlescreenEntity right1Entity;
         TitlescreenEntity right2Entity;
-        TitlescreenEntity selectorEntity;
         TitlescreenEntity listEntity;
+        TitlescreenSelectorEntity selectorEntity;
     public:
         void init();
         void render();

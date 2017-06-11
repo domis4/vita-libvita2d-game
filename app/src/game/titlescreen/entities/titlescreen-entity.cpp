@@ -11,7 +11,6 @@ void TitlescreenEntity::setSprite(Sprite _sprite) {
 }
 
 void TitlescreenEntity::move() {
-    
     if (mode == 0) {
         float xadd = (range - x + 1) / 100;
         xadd = xadd < 0.1 ? 0.1 : xadd;

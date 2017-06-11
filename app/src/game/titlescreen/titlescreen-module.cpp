@@ -22,13 +22,13 @@ void TitlescreenModule::init() {
     right2.push_back("app0:assets/titlescreen/right2.png");
     Sprite right2Sprite;
     right2Sprite.init(right2);
-    right2Entity.init(right2Sprite, 15, 0);
+    right2Entity.init(right2Sprite, 0, 0);
 
     std::vector<std::string> selector;
     selector.push_back("app0:assets/titlescreen/selector.png");
     Sprite selectorSprite;
     selectorSprite.init(selector);
-    selectorEntity.init(selectorSprite, 0, 0);
+    selectorEntity.init(selectorSprite, 557, -22);
 
     std::vector<std::string> list;
     list.push_back("app0:assets/titlescreen/list.png");
@@ -45,8 +45,8 @@ void TitlescreenModule::init() {
 
 void TitlescreenModule::render() {
     TitleScreenBackground.render();
-    right0Entity.render();
     right1Entity.render();
+    right0Entity.render();
     right2Entity.render();
     selectorEntity.render();
     listEntity.render();
@@ -56,4 +56,5 @@ void TitlescreenModule::update() {
     right0Entity.move();
     right1Entity.move();
     right2Entity.move();
+    selectorEntity.update();
 }
