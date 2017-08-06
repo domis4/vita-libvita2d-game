@@ -1,4 +1,5 @@
 #include "game-module.h"
+#include "atlas/atlas.h"
 
 void GameModule::init() {
     rad = 0.0f;
@@ -7,11 +8,18 @@ void GameModule::init() {
 	pgf = vita2d_load_default_pgf();
     image = vita2d_load_PNG_file("app0:assets/image.png");
     titlescreen.init();
+    fpsLimiter.init(false);
 }
 
 void GameModule::update() {
+    extern Atlas atlas;
     rad += 0.1f;
-    titlescreen.update();
+
+    if (atlas.isInMainMenu()) {
+        titlescreen.update();
+    } else {
+        atlas.update();
+    }
 }
 
 void GameModule::initRender() {
@@ -25,11 +33,12 @@ void GameModule::render() {
     extern Atlas atlas;
     vita2d_start_drawing();
     vita2d_clear_screen();
+
     if (atlas.isInMainMenu()) {
         titlescreen.render();
     } else {
         //delete &titlescreen;
-        vita2d_pgf_draw_text(pgf, 128,128, RGBA8(0, 0, 0, 255), 1.0f, "Game started!" );
+        atlas.render();
     }
 
     //vita2d_draw_texture_rotate(image, 940/2, 544/2, rad);

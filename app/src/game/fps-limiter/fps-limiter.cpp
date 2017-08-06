@@ -1,10 +1,13 @@
 #include "fps-limiter.h"
 
-void FpsLimiter::init() {
-
+void FpsLimiter::init(bool vsync) {
+    if (vsync == false) {
+        vita2d_set_vblank_wait(0);
+    }
 }
 
 void FpsLimiter::limitFps() {
+
 
     now = std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::system_clock::now().time_since_epoch()).count();
     long updateLength = now - lastLoopTime;

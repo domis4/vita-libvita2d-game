@@ -4,6 +4,7 @@
 #include <chrono>
 
 #include <psp2/kernel/threadmgr.h>
+#include <vita2d.h> 
 
 class FpsLimiter {
     private:
@@ -17,7 +18,7 @@ class FpsLimiter {
         int displayFps = 0;
         bool limitFPS = true;
     public:
-        void init();
+        void init(bool vsync);
         void limitFps();
         int getFps();
         double getDelta();
