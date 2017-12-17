@@ -1,7 +1,7 @@
 # vita-libvita2d-game
 a small, nameless game implementation for the ps vita wip
 
-(demo on youtube)[https://www.youtube.com/watch?v=3YxhuEGMrEI]
+[demo on youtube](https://www.youtube.com/watch?v=3YxhuEGMrEI)
 
 ## build
 
