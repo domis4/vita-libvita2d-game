@@ -67,11 +67,11 @@ vita_create_self(${PROJECT_NAME}.self ${PROJECT_NAME})
 vita_create_vpk(${PROJECT_NAME}.vpk ${VITA_TITLEID} ${PROJECT_NAME}.self
   VERSION ${VITA_VERSION}
   NAME ${VITA_APP_NAME}
-  FILE assets/titlescreen/list.png titlescreen/list.png
-  FILE assets/titlescreen/right0.png titlescreen/right0.png
-  FILE assets/titlescreen/right1.png titlescreen/right1.png
-  FILE assets/titlescreen/right2.png titlescreen/right2.png
-  FILE assets/titlescreen/selector.png titlescreen/selector.png
-  FILE assets/titlescreen/titlescreen.png titlescreen/titlescreen.png
-  FILE assets/image.png image.png
+  FILE assets/titlescreen/list.png assets/titlescreen/list.png
+  FILE assets/titlescreen/right0.png assets/titlescreen/right0.png
+  FILE assets/titlescreen/right1.png assets/titlescreen/right1.png
+  FILE assets/titlescreen/right2.png assets/titlescreen/right2.png
+  FILE assets/titlescreen/selector.png assets/titlescreen/selector.png
+  FILE assets/titlescreen/titlescreen.png assets/titlescreen/titlescreen.png
+  FILE assets/image.png assets/image.png
 )
