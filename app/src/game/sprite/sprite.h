@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <string>
 #include <vector>
-#include <stdlib.h>
+#include "/usr/local/vitasdk/arm-vita-eabi/include/c++/10.3.0/stdlib.h"
 #include <vita2d.h>
 
 class Sprite {

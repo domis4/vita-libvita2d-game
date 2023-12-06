@@ -1,10 +1,11 @@
 #pragma once
 #include <stdio.h>
 #include <string.h>
-#include <stdlib.h>
+#include "/usr/local/vitasdk/arm-vita-eabi/include/c++/10.3.0/stdlib.h"
 
 #include <psp2/ctrl.h>
 #include <psp2/kernel/processmgr.h>
+#include <psp2/sharedfb.h>
 #include <vita2d.h>
 
 #include "titlescreen/titlescreen-module.h"
